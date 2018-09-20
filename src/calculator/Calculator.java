@@ -15,31 +15,47 @@ public class Calculator {
      */
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("Enter first Number");
-        int num1 = keyboard.nextInt();
-        System.out.println("Enter Second Number");
-        int num2 = keyboard.nextInt();
-        System.out.println("Enter either 1 for (-) , 2 for (+) , 3 for (/) , 4 for (*)");
-        int num3 = keyboard.nextInt();
-        int num4 = 1;
+        int restart = 1;
+        int i = 0;
        
+        while (i < 1){
+        if (restart == 0 || restart == 1){
         
-              
-      if ( num3 == 1  ){
-     num4 = num1-num2 ;
-   }
-      if ( num3 == 2  ){
-     num4 = num1+num2 ;
-   }
-      if ( num3 == 3){
-     num4 = num1/num2 ;
-   }
-      if ( num3 == 4  ){
-     num4 = num1*num2 ;
-   }
-            
-        System.out.print(num4  + "\n");
+        restart = 2;
         
+        System.out.println("Enter first Number");
+        double num1 = keyboard.nextDouble();
+        
+        System.out.println("Enter either 1 for (-) , 2 for (+) , 3 for (/) , 4 for (*)");
+        int num2 = keyboard.nextInt();
+        
+        System.out.println("Enter Second Number");
+        double num3 = keyboard.nextDouble();
+        
+        double num4 = 1;
+           
+         if ( num2 == 1  ){
+            num4 = num1 - num3 ;
+         }
+         if ( num2 == 2  ){
+            num4 = num1 + num3 ;
+        }
+         if ( num2 == 3){
+            num4 = num1/num3 ;
+         }
+         if ( num2 == 4  ){
+            num4 = num1*num3 ;
+         }
+        System.out.print("Total: " + num4  + "\n");
+        System.out.println("To Restart Press 0 or Press 3 To Exit");
+        restart = keyboard.nextInt();
+        
+        if (restart == 3){
+                i = 3;
+            }
+        
+        }  
+    }
     }
     
 }
